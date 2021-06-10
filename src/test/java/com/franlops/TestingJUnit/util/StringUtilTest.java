@@ -1,18 +1,21 @@
 package com.franlops.TestingJUnit.util;
 
 //import static org.junit.Assert.*;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class StringUtilTest {
-    public static void main(String[] args) {
+
+    @Test
+    public void testRepeat(){
+
+        //Test 1
         String result = StringUtil.repeat("hola", 3);
-        assertEquals(result, "holaholahola");
+        Assert.assertEquals("holaholahola", result);
 
-        assertEquals(StringUtil.repeat("hola", 1), "hola");
+        //Test2
+        Assert.assertEquals("hola", StringUtil.repeat("hola", 1));
     }
 
-    private static void assertEquals(String actual, String expected) {
-        if(!actual.equals(expected)){
-            throw new RuntimeException(actual + " is not equal to expected " + expected);
-        }
-    }
+
 }
